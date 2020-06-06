@@ -6,34 +6,38 @@ import java.util.Scanner;
 
 
 public class Min_MAx {
+	
 
-	public static ArrayList<Integer> MinMAxOfArray(int[] array) {
-		ArrayList<Integer> arrayList=new ArrayList<Integer>();
+	public static ArrayList MinMAxOfArray(ArrayList<Integer> array) {
+	
+		ArrayList<Integer> max_min_list=new ArrayList<Integer>();
 		
-		int min = array[0];
-		for(int i=1;i<array.length;i++){
+		
+		int min = array.get(0);
+		
+		for(int i : array){
 			
-			if(array[i]< min){
+			if(i< min){
 				
-				min= array[i];
+				min= i;
 				
 			}
 		}
 			
-		int max = array[0];
-		for(int i=1;i<array.length;i++){
+		int max = array.get(0);
+		for(int i : array){
 			
-			if(array[i]>max){
+			if(i>max){
 				
-				max=array[i];
+				max=i;
 				
 			}
 		}
 		
-		arrayList.add(min);
-		arrayList.add(max);
+		max_min_list.add(min);
+		max_min_list.add(max);
 
-		return arrayList;
+		return max_min_list;
 		
 		
 	}
