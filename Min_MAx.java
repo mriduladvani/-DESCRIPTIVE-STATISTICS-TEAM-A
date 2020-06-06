@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 
-public class Min_MAx {
+public class Min_Max {
 	
 
 	public static ArrayList MinMAxOfArray(ArrayList<Integer> array) {
