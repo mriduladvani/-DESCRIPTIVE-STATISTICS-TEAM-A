@@ -1,6 +1,6 @@
 import java.util.*;
 
- class Median {
+ public class Median {
 	
 	public static double median (double array[]) {
 		
