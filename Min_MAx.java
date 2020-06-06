@@ -10,7 +10,7 @@ public class Min_Max {
 
 	public static ArrayList MinMAxOfArray(ArrayList<Integer> array) {
 	
-		ArrayList<Integer> max_min_list=new ArrayList<Integer>();
+		ArrayList<Integer> min_max_list=new ArrayList<Integer>();
 		
 		
 		int min = array.get(0);
@@ -34,10 +34,10 @@ public class Min_Max {
 			}
 		}
 		
-		max_min_list.add(min);
-		max_min_list.add(max);
+		min_max_list.add(min);
+		min_max_list.add(max);
 
-		return max_min_list;
+		return min_max_list;
 		
 		
 	}
