@@ -5,6 +5,12 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 
+/**
+ * Min_Max class to compute the minumum & maximum of the given input numbers
+ * @author Maryam
+ *
+ */
+
 public class Min_Max {
 	
 
