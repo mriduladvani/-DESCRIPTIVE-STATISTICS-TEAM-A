@@ -13,6 +13,12 @@ import java.util.Scanner;
 
 public class Min_Max {
 	
+	/**
+	 * This method computes and returns the min and max of the given list of input numbers
+	 * @param inputList
+	 * @return (min_max_list)
+	 */
+	
 
 	public static ArrayList MinMAxOfArray(ArrayList<Integer> array) {
 	
