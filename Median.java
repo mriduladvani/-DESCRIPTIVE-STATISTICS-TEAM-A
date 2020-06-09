@@ -1,6 +1,20 @@
+package median;
+
 import java.util.*;
 
+/**
+ * Median class to compute the median of the given input numbers
+ * @author Sri Akhil Varma Alluri
+ *
+ */
+
  public class Median {
+	 
+	 /**
+	 * This method computes and returns the median of the given list of input numbers
+	 * @param inputList
+	 * @return median
+	 */
 	
 	public static double median (double array[]) {
 		
