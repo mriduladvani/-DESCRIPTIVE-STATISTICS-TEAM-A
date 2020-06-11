@@ -27,11 +27,6 @@ public class Mode {
         }
       }
       
-      for (j = 0; j < n; ++j) {
-        if (a[j] == a[i])
-        ++count;
-      }
-      
       if (count > maxCount) {
         maxCount = count;
         maxValue = currentValue;
