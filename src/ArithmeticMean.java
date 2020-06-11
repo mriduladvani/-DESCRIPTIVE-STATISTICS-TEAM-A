@@ -1,7 +1,9 @@
+package src;
+
 import java.util.List;
 
 /**
- * ArithmeticMean class to compute the mean of the given input numbers
+ * src.ArithmeticMean class to compute the mean of the given input numbers
  * @author Nikitha
  *
  */
@@ -14,8 +16,8 @@ public class ArithmeticMean {
 	 */
 	public double arithmeticMean(List<Integer> inputList) {
 		
-		int sum = 0;
-		int count = 0;
+		float sum = 0;
+		float count = 0;
 		
 		for(Integer value: inputList) {
 			sum += value;
