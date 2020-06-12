@@ -4,8 +4,8 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Scanner;
+
+import java.util.*;
 
 /**
  * src.descriptive_statistic class to compute the main function
@@ -16,13 +16,15 @@ import java.util.Scanner;
 public class descriptive_statistics {
 
     public static void main(String[] args) throws IOException {
-        String continueChoice, statisticChoice;
+        String continueChoice="yes", statisticChoice;
+        HashMap<ArrayList<Double>, ArrayList<Double>> savedData= new HashMap<ArrayList<Double>, ArrayList<Double>>();
 
 
 
         do {
             Scanner scanner = new Scanner(System.in);
             ArrayList<Double> list = new ArrayList<Double>();
+            ArrayList<Double> statisticList= new ArrayList<Double>();
             displayDataEntryMenu();
             String dataEntryChoice = scanner.next();
             switch (dataEntryChoice) {
@@ -76,6 +78,27 @@ public class descriptive_statistics {
 
                 }
                 break;
+
+                case "4":
+                {
+                    int hashmapLength=0;
+                    for (ArrayList<Double> valueList: savedData.values())
+                    {
+                        hashmapLength+=1;
+                    }
+                    System.out.println();
+                    System.out.println("Format of the previously evaluated data");
+                    System.out.println("List of data: corresponding statistics calculated");
+                    Iterator hashmapIterator= savedData.entrySet().iterator();
+                    while (hashmapIterator.hasNext())
+                    {
+                        Map.Entry savedElement= (Map.Entry)hashmapIterator.next();
+                        System.out.println(savedElement.getKey() + ": "+ savedElement.getValue());
+                    }
+                    System.out.println();
+                    continue;
+
+                }
             }
             System.out.println("The following is your data: ");
             System.out.println(list);
@@ -89,6 +112,8 @@ public class descriptive_statistics {
                     Min_Max minmax= new Min_Max();
                     System.out.println("Minimum value of the data is: " + minmax.MinMaxOfArray(list).get(0));
                     System.out.println("Maximum value of the data is: " + minmax.MinMaxOfArray(list).get(1));
+                    statisticList.add((Double)minmax.MinMaxOfArray(list).get(0));
+                    statisticList.add((Double)minmax.MinMaxOfArray(list).get(0));
                 }
                 break;
 
@@ -96,6 +121,8 @@ public class descriptive_statistics {
                 {
                     Mode mode=new Mode();
                     System.out.println("Mode of the data is: "+ mode.mode(list));
+                    statisticList.add(mode.mode(list));
+
                 }
                 break;
 
@@ -103,11 +130,15 @@ public class descriptive_statistics {
                 {
                     Median median= new Median();
                     System.out.println("Median of the data is: " + median.median(list));
+                    statisticList.add(median.median(list));
                 }
+                break;
+
                 case "4":
                 {
                     ArithmeticMean mean= new ArithmeticMean();
                     System.out.println("Mean of the data is: " + mean.arithmeticMean(list));
+                    statisticList.add(mean.arithmeticMean(list));
                 }
                 break;
 
@@ -115,12 +146,14 @@ public class descriptive_statistics {
                 {
                     MeanAbsoluteDeviation mad= new MeanAbsoluteDeviation();
                     System.out.println("Mean absolute deviation of the data is: " + mad.meanAbsoluteDeviation(list));
+                    statisticList.add(mad.meanAbsoluteDeviation(list));
                 }
                 break;
 
                 case "6":{
                     standardDeviation sd= new standardDeviation();
                     System.out.println("Standard Deviation of the data is: " + sd.calculateStandardDeviation(list));
+                    statisticList.add(sd.calculateStandardDeviation(list));
 
                 }
                 break;
@@ -140,6 +173,14 @@ public class descriptive_statistics {
                     System.out.println("Mean absolute deviation: " + mad.meanAbsoluteDeviation(list));
                     standardDeviation sd= new standardDeviation();
                     System.out.println("Standard Deviation: " + sd.calculateStandardDeviation(list));
+                    statisticList.add((Double)minmax.MinMaxOfArray(list).get(0));
+                    statisticList.add((Double)minmax.MinMaxOfArray(list).get(1));
+                    statisticList.add(mode.mode(list));
+                    statisticList.add(median.median(list));
+                    statisticList.add(mean.arithmeticMean(list));
+                    statisticList.add(mad.meanAbsoluteDeviation(list));
+                    statisticList.add(sd.calculateStandardDeviation(list));
+
                 }
                 break;
 
@@ -150,7 +191,15 @@ public class descriptive_statistics {
 
             }
 
-            System.out.println("Do you want to continue?");
+            System.out.println("Would you like to save your statistic calculations? (yes/no)");
+            String saveChoice= scanner.next();
+            if(saveChoice.equals("yes"))
+            {
+                savedData.put(list, statisticList);
+                System.out.println("Your data was saved.");
+            }
+
+            System.out.println("Do you want to continue? (yes/no)");
             continueChoice = scanner.next();
 
         } while (continueChoice.equals("yes"));
@@ -193,6 +242,7 @@ public class descriptive_statistics {
         System.out.println("1. Enter manually");
         System.out.println("2. Randomize the required number of values between a range");
         System.out.println("3. Import from a text file");
+        System.out.println("4. View previously evaluated data with DESCRIPTIVE STATISTICS");
         System.out.println("Select your choice:");
 
     }
