@@ -14,7 +14,7 @@ public class descriptive_statisticsTest {
 
 
     @Test
-    public void main() throws FileNotFoundException {
+    public void descriptive_statisticsTest() throws FileNotFoundException {
         File file= new File("C:/Users/mridul/IdeaProjects/-DESCRIPTIVE-STATISTICS-TEAM-A/src/testText.txt");
         Scanner scanner = new Scanner(file);
         ArrayList<Double> list= new ArrayList<Double>();
@@ -38,13 +38,8 @@ public class descriptive_statisticsTest {
         assertEquals(5000.0, maximum);
         assertEquals(2418.5, med);
         assertEquals(2459.1259765625, mean);
-        assertEquals(1259.430016, mad);
-        assertEquals(1447.16052382, sd);
-
-
-
-
-
+        assertEquals(1259.430015625, mad);
+        assertEquals(1446.436762573463, sd);
 
     }
 }

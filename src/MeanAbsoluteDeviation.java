@@ -46,7 +46,7 @@ public class MeanAbsoluteDeviation {
 		double absSum = 0.0; 
 
 		for (int i = 0; i < n; i++) {
-			absSum = absSum + getAbsoluteValue(list.get(i))- arithmeticMean; 
+			absSum = absSum + getAbsoluteValue(list.get(i)- arithmeticMean);
 		}
 		return (absSum / n); 
 	} 
