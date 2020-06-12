@@ -1,7 +1,6 @@
-//package src;
+package src;
 
 import java.util.ArrayList;
-import java.util.Scanner;
 
 
 /**
@@ -18,14 +17,14 @@ public class Min_Max {
 	 */
 	
 
-	public static ArrayList MinMaxOfArray(ArrayList<Integer> array) {
+	public static ArrayList MinMaxOfArray(ArrayList<Double> array) {
 	
-		ArrayList<Integer> min_max_list=new ArrayList<Integer>();
+		ArrayList<Double> min_max_list=new ArrayList<Double>();
 		
 		
-		int min = array.get(0);
+		double min = array.get(0);
 		
-		for(int i : array){
+		for(double i : array){
 			
 			if(i< min){
 				
@@ -34,8 +33,8 @@ public class Min_Max {
 			}
 		}
 			
-		int max = array.get(0);
-		for(int i : array){
+		double max = array.get(0);
+		for(double i : array){
 			
 			if(i>max){
 				

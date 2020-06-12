@@ -1,3 +1,4 @@
+package src;
 import java.util.*;
 
 
@@ -8,15 +9,14 @@ import java.util.*;
  *
  */
 
- class Median {
+ public class Median {
 	 
 	 /**
 		 * This method computes and returns the Median of the given list of input numbers
-		 * @param inputList
 		 * @return (median)
 		 */
 	
-	public static double median (List<Integer> array) {
+	public static double median (List<Double> array) {
 		
 		int n = 0;
 		
@@ -29,7 +29,7 @@ import java.util.*;
 		{
 			for(int j=i+1;j<n;j++)
 			{
-				int temp=0;
+				double temp=0;
 				
 				if(array.get(i)>array.get(j))
 				{
@@ -43,12 +43,12 @@ import java.util.*;
 		
 		if(n%2 != 0)
 		{
-			return (float) (array.get(n/2));
+			return (double) (array.get(n/2));
 		}
 		
 		else
 		{
-			 return (float) (array.get((n - 1) / 2) + array.get((n / 2))) / 2;
+			 return (double) (array.get((n - 1) / 2) + array.get((n / 2))) / 2;
 		}
 		
 	}

@@ -1,4 +1,4 @@
-//package src;
+package src;
 
 import java.util.List;
 
@@ -14,12 +14,14 @@ public class ArithmeticMean {
 	 * @param inputList
 	 * @return (sum / count)
 	 */
-	public double arithmeticMean(List<Integer> inputList) {
+	public double arithmeticMean(List<Double> inputList) {
+
+
 		
 		float sum = 0;
 		float count = 0;
 		
-		for(Integer value: inputList) {
+		for(Double value: inputList) {
 			sum += value;
 			count++;
 		}

@@ -1,5 +1,5 @@
+package src;
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * src.MeanAbsoluteDeviation class to compute the mean absolute deviation of the given input numbers
@@ -13,9 +13,9 @@ public class MeanAbsoluteDeviation {
 	 * @param inputList
 	 * @return (count)
 	 */
-	int getSize(ArrayList<Integer> inputList) {
+	int getSize(ArrayList<Double> inputList) {
 		int count=0;
-		for(Integer value: inputList) {
+		for(Double value: inputList) {
 
 			count++;
 		}
@@ -36,7 +36,7 @@ public class MeanAbsoluteDeviation {
 	 * @param list
 	 * @return (absSum / n)
 	 */
-	double meanAbsoluteDeviation(ArrayList<Integer> list) {
+	public double meanAbsoluteDeviation(ArrayList<Double> list) {
 		int n;
 		double arithmeticMean;
 		n=getSize(list);
