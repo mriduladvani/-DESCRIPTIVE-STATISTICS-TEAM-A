@@ -1,5 +1,4 @@
 package src;
-
 import java.util.List;
 
 /**
@@ -14,25 +13,28 @@ public class Mode {
 	 * @param numberSet
 	 * @return double mode
 	 */
-	public double mode(List<Double> numberSet) {
-		double maxValue = 0; 
-    int maxCount = 0;
+	public int mode(List<Integer> numberSet) {
+		int modeCount = 0;	// The count of the mode value
+		int mode = 0;		// The value of the mode
+
+		int index = 0;	
+		int current;
 		
-		for(Double currentValue: numberSet) {
-			int count = 0;
+		for(int currentValue: numberSet) {
+			index = 0;
       
-      for(Double checkValue: numberSet) {
-        if(checkValue == currentValue) {
-          ++count;
-        }
+      for(int checkValue: numberSet) {
+        if (currentValue == checkValue){
+					index++;
+				}
       }
       
-      if (count > maxCount) {
-        maxCount = count;
-        maxValue = currentValue;
-      }
+      if (index > modeCount){
+				modeCount = index;
+				mode = currentValue;
+			}
 		}
     
-		return maxValue;
+		return mode;
 	}
 }
