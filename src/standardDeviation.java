@@ -3,7 +3,7 @@ package src;
 import java.util.ArrayList;
 
 /**
- * src.standardDeviation class to compute the mean of the given input numbers
+ * src.standardDeviation class to compute the standard deviation of the given input numbers
  * @author Mridul Advani
  *
  */

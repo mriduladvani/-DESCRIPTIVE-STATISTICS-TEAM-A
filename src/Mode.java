@@ -13,17 +13,17 @@ public class Mode {
 	 * @param numberSet
 	 * @return double mode
 	 */
-	public int mode(List<Integer> numberSet) {
+	public double mode(List<Double> numberSet) {
 		int modeCount = 0;	// The count of the mode value
-		int mode = 0;		// The value of the mode
+		double mode = 0;		// The value of the mode
 
 		int index = 0;	
 		int current;
 		
-		for(int currentValue: numberSet) {
+		for(double currentValue: numberSet) {
 			index = 0;
       
-      for(int checkValue: numberSet) {
+      for(double checkValue: numberSet) {
         if (currentValue == checkValue){
 					index++;
 				}

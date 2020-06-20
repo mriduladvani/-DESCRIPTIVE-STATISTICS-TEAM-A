@@ -53,9 +53,12 @@ public class descriptive_statistics {
                 }
                 break;
                 case "3": {
-                    System.out.println("Enter the name of the file you want to enter");
-                    String fileName = scanner.nextLine();
-                    File file = new File("C:/Users/mridul/IdeaProjects/-DESCRIPTIVE-STATISTICS-TEAM-A/src/inputTest.txt");
+                    System.out.println("Enter the name of the file you want to enter (also enter the extension)");
+                    String fileName = scanner.next();
+                    String currentDirectory= System.getProperty("user.dir");
+                    fileName= currentDirectory +"\\src\\"+ fileName;
+                    System.out.println(fileName);
+                    File file = new File(fileName);
                     FileReader fileObject = new FileReader(file);
                     BufferedReader fileReader = new BufferedReader(fileObject);
                     String c = fileReader.readLine();
